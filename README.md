@@ -1,3 +1,10 @@
+Live Deployed Link:  https://advance-quote-generator.netlify.app/
+
+https://github.com/rohitraj232/Quote-Generator/assets/57895889/2deaad45-7428-4186-a06d-83c62a498ed1
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
