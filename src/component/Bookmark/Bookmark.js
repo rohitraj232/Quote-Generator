@@ -20,14 +20,14 @@ const Bookmark = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Your fav List</h1>
+    <div className="container-bookmark">
+      <h1>Your Bookmarked List</h1>
       {items &&
         items.map((item) => (
-          <ul key={item.key}>
-            <li>{item.value}</li>
+          <ul className="bookmark-ul" key={item.key}>
+            <li className="bookmark-li">{item.value}</li>
             <li>
-              <button onClick={() => handleDeleteBookmark(item.key)}>
+              <button className="bookmark-deletebtn" onClick={() => handleDeleteBookmark(item.key)}>
                 Delete
               </button>
             </li>

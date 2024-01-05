@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './QuoteGenerater.css'
+import bookmarkImg from '../images/bookmark.png'
 import Loader from "../Loader/Loader";
+
 const QuoteGenerator = () => {
   const [quote, setQuote] = useState('');
   const [tags, setTags] = useState([]);
@@ -37,24 +39,23 @@ const QuoteGenerator = () => {
   return (
     <div>
       {quote ? 
-    <div className="container">
-    <div className="quote"><h5>Quote:</h5> {quote.content}</div>
-    <div className="tags">~~ {quote.author}</div>
-    <button onClick={fetchData} className="get_quote">Get Quote</button>
-    <button onClick={handleBookmark} className="bookmark_img">Bookmark </button>
+          <div className="container-quote">
+            <div className="quote">{quote.content}
+              <div className="tags">~~ {quote.author}</div>
+            </div>
+            <button onClick={fetchData} className="get_quote">Get Quote</button>
+            <button onClick={handleBookmark} className="bookmark_img"><img src={bookmarkImg} /></button>
 
-<br></br>
-<br></br>
-    <select onChange={(e) => setSelectedTag(e.target.value)} onClick={() => handleTagQuote(selectedTag)}>
-      <option value="">Select a Tag</option>
-      {tags.map(item => (
-        <option key={item._id} value={item.name}  >
-          {item.name}
-        </option>
-      ))}
-    </select>
-  </div> : <Loader/>}
-  </div>
+            <select onChange={(e) => setSelectedTag(e.target.value)} onClick={() => handleTagQuote(selectedTag)}>
+              <option value="">Select a Tag</option>
+              {tags.map(item => (
+                <option key={item._id} value={item.name}  >
+                  {item.name}
+                </option>
+              ))}
+            </select>
+          </div> : <Loader/>}
+    </div>
   );
 };
 
